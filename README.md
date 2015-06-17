@@ -12,3 +12,4 @@ snazzy codes to show off to prospective employers. I'd like to go into data scie
 
 ## Links
 [Here's a link to my github account](https://github.com/SydneyLauren)
+[Here's a link to the daily puppy](http://www.dailypuppy.com/)
