@@ -55,4 +55,4 @@ I didn't collaborate on this assignment.
 typ
 Reflection:
 
-I learned not to expect that the data set only contains the type of content that I'm expecting to find.  I guess I wish I had known that there would letters other than A/C/G/T in the files.
+I learned not to expect that the data set only contains the type of content that I'm expecting to find.  I guess I wish I had known that there would letters other than A/C/G/T in the files.  I would tell future students that the hardest part of this assignment will be using git.

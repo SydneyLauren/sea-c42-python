@@ -1,4 +1,4 @@
-# Name: ...
+# Name: Sydney Decoto
 # CSE 140
 # Homework 2: DNA analysis
 
