@@ -1,5 +1,5 @@
 # Name: Sydney Decoto
-# CSE 140
+# sea-c42-python
 # Homework 2: DNA analysis
 
 # This program reads DNA sequencer output and computes statistics, such as
