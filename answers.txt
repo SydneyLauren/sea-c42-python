@@ -1,0 +1,58 @@
+Name: Sydney Decoto
+CSE 140
+Homework 2
+
+For each problem that requires a written answer, write (or copy-and-paste)
+your answers in this file.  When you are done, you should have replaced all
+the ellipses (the three dots) with your answers.
+
+At the end, you will turn in this file along with your modified
+dna_analysis.py program.
+
+
+Problem 1:
+
+(No answers in this file.)
+
+Problem 2:
+
+GC-content: 0.4302926296296296
+
+Problem 3:
+
+Commenting out linenum = 0 caused a NameError on line 38 because
+the linenum variable is used to increment itself, and it was no longer
+initialized. The same error will occur if gc_count = 0 is commented
+out. The variable needs to exist before it can be called.
+
+Problem 4:
+
+AT-content: 0.5689938518518518
+
+Problem 5:
+
+G-count: 5738773
+C-count: 5879128
+A-count: 7701287
+T-count: 7661547
+
+Problem 6:
+
+In every file other than test-small.fastq, the sum of the four counts differs from total_count and the length of seq. It looks like the letter 'N' is popping up here and there in some of the files.
+In order to calculate GC content, the sum of a/c/g/t counts should be used as the denominator. The total_count and length of seq include non a/c/g/t terms.
+
+Problem 7:
+
+AT_GC ratio: 1.3223416174746196
+
+Problem 8:
+
+moderate GC content
+
+Collaboration:
+
+I didn't collaborate on this assignment.
+typ
+Reflection:
+
+I learned not to expect that the data set only contains the type of content that I'm expecting to find.  I guess I wish I had known that there would letters other than A/C/G/T in the files.  I would tell future students that the hardest part of this assignment will be using git.
