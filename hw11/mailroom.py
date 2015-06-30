@@ -1,7 +1,10 @@
 
 
 def mailroom(userinput='thank you'):
-    fulldonorlist = [["Sydney Decoto", "Big Bird"], [[20], [300, 400]]]
+    fulldonorlist = [["Sydney Decoto", "Big Bird", "John Doe", "Jane Doe",
+                      "Cher"], [[20], [300, 400], [1000], [600, 50],
+                    [20, 30, 40]]]
+
     while userinput != 'quit':
         userinput = input("""\nWelcome to Mailroom Madness\n
 Choose from the following:\n\nT - Send a (T)hank You\n
@@ -21,6 +24,7 @@ def thankyou(userinput, fulldonorlist):
         userinput = input("""\nPlease enter a name, or choose from the following:\n
 list - Print a list of previous donors\n
 quit - Return to main menu\n\n""")
+
         # Initialize the donor list
         donorlist = fulldonorlist[0]
         # If the user types list, print the names
@@ -29,7 +33,12 @@ quit - Return to main menu\n\n""")
             userinput = input("Enter Donor Name: ")
         elif userinput != 'quit':
             # append list of donors with new name
-            donorlist.append(userinput)
+            # donorlist.append(userinput)
+            check = userinput in fulldonorlist[0]
+            if check:
+                ind = fulldonorlist[0].index(userinput)
+            else:
+                fulldonorlist[0].append(userinput)
         else:
             break
 
@@ -43,9 +52,10 @@ amount or 'quit':\n\n""")
 
             try:
                 donoramount = int(userinput)
-                fulldonorlist[0].append(donorname)
-                fulldonorlist[1].append(donoramount)
-                print(fulldonorlist[1])
+                if check:
+                    fulldonorlist[1][ind].append(donoramount)
+                else:
+                    fulldonorlist[1].append([donoramount])
                 break
             except ValueError:
                 print("Entry was not a number")
@@ -64,10 +74,14 @@ Thanks again,\n\nJim Grant\n\nDirector, F.H.W.')
 
 def createreport(fulldonorlist):
     # read through full donor list
-    for i in len(fulldonorlist[0]):
-        fulldonorlist[0][i]
-
+    totaldonation = []
+    averagedonation = []
+    for i in range(0, len(fulldonorlist[0])):
+        totaldonation.append(sum(int(j) for j in fulldonorlist[1][i]))
+        averagedonation.append(totaldonation[i] / len(fulldonorlist[1][i]))
+        fulldonorlist[1][i] = sum(int(j) for j in fulldonorlist[1][i])
     print(fulldonorlist)
+    print(averagedonation)
 
     print('        Name         |    Total    |  #  |   Average ')
     print('\n______________________________________________________')
