@@ -87,10 +87,12 @@ def createreport(fulldonorlist):
         fulldonorlist[1][i] = sum(int(j) for j in fulldonorlist[1][i])
         fulldonorlist[2].append(averagedonation[i])
     print(fulldonorlist)
+    sortdon = sorted(totaldonation)
+    print(sortdon)
     sortedlist = fulldonorlist  # somehow magically sort the data
     print('        Name         |    Total    |  #  |   Average ')
     print('\n______________________________________________________')
     # for i in range(0, len(sortedlist[0]) - 1):
-    # somehow magically print the dats
+    # somehow magically print the data
     print('\nBill Gates           |     $100.00 |   1 |     $100.00')
     input('\nPress Enter to Continue ...')
