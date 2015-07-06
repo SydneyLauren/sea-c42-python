@@ -2,7 +2,7 @@
 
 def mailroom(userinput='thank you'):
     fulldonorlist = [["Sydney Decoto", "Big Bird", "John Doe", "Jane Doe",
-                      "Cher"], [[20], [300, 400], [1000], [600, 50],
+                      "Harry Potter"], [[20], [300, 400], [1000], [600, 50],
                     [20, 30, 40]], []]
 
     while userinput != 'quit':
@@ -31,12 +31,8 @@ quit - Return to main menu\n\n""")
         if userinput == 'list':
             print(donorlist)
             userinput = input("Enter Donor Name: ")
-            check = userinput in fulldonorlist[0]
-            if check:
-                ind = fulldonorlist[0].index(userinput)
-            else:
-                fulldonorlist[0].append(userinput)
-        elif userinput != 'quit':
+
+        if userinput != 'quit':
             # append list of donors with new name
             # donorlist.append(userinput)
             check = userinput in fulldonorlist[0]
@@ -83,7 +79,7 @@ def createreport(fulldonorlist):
     averagedonation = []
     numdons = []
     for i in range(0, len(fulldonorlist[0])):
-        totaldonation.append(sum(int(j) for j in fulldonorlist[1][i]))
+        totaldonation.append(sum(fulldonorlist[1][i]))
         averagedonation.append(totaldonation[i] / len(fulldonorlist[1][i]))
         numdons.append(len(fulldonorlist[1][i]))
         fulldonorlist[1][i] = sum(int(j) for j in fulldonorlist[1][i])
@@ -92,7 +88,6 @@ def createreport(fulldonorlist):
     print(fulldonorlist)
     names = fulldonorlist[0]
     sortdon = sorted(totaldonation)
-    print(sortdon)
 
     sortedlist = fulldonorlist  # somehow magically sort the data
     print('Name         | Total |  #  |   Average ')
@@ -100,5 +95,4 @@ def createreport(fulldonorlist):
     for i in range(0, len(sortedlist[0]) - 1):
         print(names[i], totaldonation[i], numdons[i], averagedonation[i], sep = '\t')
     # somehow magically print the data
-    print('\nBill Gates           |     $100.00 |   1 |     $100.00')
     input('\nPress Enter to Continue ...')
